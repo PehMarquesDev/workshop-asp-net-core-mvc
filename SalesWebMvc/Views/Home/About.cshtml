@@ -1,7 +1,15 @@
-﻿@{
+﻿
+@{
+    // Define o valor da Chave data no Dictionary ViewData para utilizá-lo direto no html posteriormente
     ViewData["Title"] = "About";
+    int x = 2;
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+
+<p>Profeessor @ViewData["Professor"]</p>
+
+<address>
+    <strong>More information: </strong> <a href="https://www.udemy.com/course/programacao-orientada-a-objetos-csharp/">Curso C# Completo - POO</a>
+</address>
