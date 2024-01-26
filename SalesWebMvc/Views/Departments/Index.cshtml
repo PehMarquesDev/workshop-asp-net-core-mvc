@@ -1,0 +1,47 @@
+﻿@* Define o tipo da lista passada para ser utilizada dentro da página *@
+@model IEnumerable<SalesWebMvc.Models.Department>
+
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<h2>Index</h2>
+
+<p>
+    @* Link que aponta para a ação Create no controlador Department *@
+    @* Precisa ser definida ainda *@
+    <a asp-action="Create">Create New</a>
+</p>
+@* Cria o cabeçalho de uma tabela com os títulos das propriedades do objeto Department*@
+<table class="table">
+    <thead>
+        <tr>
+            <th> @* Utiliza uma expressão lamba para indicar qual propriedade vai exibir *@
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Utiliza código c# para realizar um foreach e popular a tabela com os itens *@
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @* Links para ações de editar, detalhar e Deletar, precisam ser implementadas *@
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
