@@ -20,5 +20,27 @@ namespace SalesWebMvc.Services
         {
             return _context.Seller.ToList();
         }
+
+        public bool Insert(Seller seller)
+        {
+            try
+            {
+                _context.Add(seller);
+                var a = _context.SaveChanges();
+                if (a > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

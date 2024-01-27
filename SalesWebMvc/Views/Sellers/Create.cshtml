@@ -1,0 +1,40 @@
+﻿@model SalesWebMvc.Models.Seller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Seller</h4>
+<hr />
+@* row pertence ao bootstrap e indica que esse div ocupará toda a largura da tela*@
+<div class="row">
+    @* col-md-4 pertence ao bootstrap e indica que essa div ocupará 1/3 da tela
+        Bootstrap divide a tela em 12 partes, portanto 4 seria um terço*@
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                @* define o label do objeto que aparecerá na caixinha para digitar *@
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseSalary" class="control-label"></label>
+                <input asp-for="BaseSalary" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
