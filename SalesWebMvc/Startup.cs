@@ -46,6 +46,7 @@ namespace SalesWebMvc
             //Adiciona os serviços que que dependem do DbContext, no escopo dele, realizando a injenção da dependência
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
