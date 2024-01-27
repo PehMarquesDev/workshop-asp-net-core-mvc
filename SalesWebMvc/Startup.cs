@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Models;
 using SalesWebMvc.Data;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc
 {
@@ -42,7 +43,9 @@ namespace SalesWebMvc
                         builder.MigrationsAssembly("SalesWebMvc")));
 
             //Registra o serviço de seeding (que vai popular o banco), no sistema de injeção de dependência
+            //Adiciona os serviços que que dependem do DbContext, no escopo dele, realizando a injenção da dependência
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
