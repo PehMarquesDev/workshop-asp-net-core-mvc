@@ -25,6 +25,7 @@ namespace SalesWebMvc.Services
         {
             try
             {
+                seller.Department = _context.Department.First();
                 _context.Add(seller);
                 var a = _context.SaveChanges();
                 if (a > 0)
