@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SalesWebMvc.Models
@@ -8,8 +9,21 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        //DataType indica um padrão para o tipo de conteúdo que será apresentado
+        //Nesse caso, por exemplo, o email será apresentado como o link de email
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        //Annotation Display é utilizada para customizar como ele será apresentado
+        [Display(Name = "Base Salary")]
+        //Utilizado para formatar o atributo
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
+
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
